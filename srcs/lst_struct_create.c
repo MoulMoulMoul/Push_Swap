@@ -15,7 +15,7 @@ t_list	add_at(t_list *lst, int content, int pos)
 {
 	t_list	prec;
 	t_list	cur;
-	t_list	cell;6
+	t_list	cell;
 	int		i;
 
 	prec = lst;
@@ -40,17 +40,6 @@ t_list	add_at(t_list *lst, int content, int pos)
 	return (lst);
 }
 
-int	is_empty_list(t_list *lst)
-{
-	if (lst == NULL)
-		return (1);
-	return (0);
-}
-t_list	*empty_list(void)
-{
-	return(NULL);
-}
-
 static t_list	*create_cell(int content)
 {
 	t_list cell;
@@ -63,29 +52,7 @@ static t_list	*create_cell(int content)
 	return (cell);
 }
 
-int	ft_lstsize(t_list *lst)
+t_list	*empty_list(void)
 {
-	size_t	i;
-
-	i = 0;
-	while (lst)
-	{
-		lst = lst->next;
-		i++;
-	}
-	return (i);
-}
-
-t_list	*free_list(t_list *lst)
-{
-	t_list *tmp;
-
-	tmp = NULL;
-	while(lst)
-	{
-		tmp = lst->next;
-		free(lst);
-		lst = tmp;
-	}
-	return (lst);
+	return(NULL);
 }
