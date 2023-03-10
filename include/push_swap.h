@@ -12,6 +12,12 @@ typedef struct s_list
 	struct s_list	*next;
 }					t_list;
 
+typedef struct s_pile
+{
+	t_list		*pile_a;
+	t_list		*pile_b;
+}					t_pile;
+
 static t_list	*create_cell(int data)
 t_list          *empty_list(void);
 t_list          *add_at(t_list *lst, int data, int pos);

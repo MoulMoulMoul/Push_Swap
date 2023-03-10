@@ -1,35 +1,31 @@
-NAME		= push_swap
-CC			= gcc
-CFLAGS		= -Wall -Werror -Wextra
+CC		= gcc
+CFLAGS	= -Wall -Werror -Wextra
+NAME	= push_swap
 
-SRCS_DIR	= srcs/
-OBJS_DIR	= objs/
-LIB_DIR		= libft
-INCLUDE		= include/
+SRC_PATH = src/
+OBJ_PATH = obj/
 
-SRCS		= main.c
+SRC		= *.c
+SRCS	= $(addprefix $(SRC_PATH), $(SRC))
+OBJ		= $(SRC:.c=.o)
+OBJS	= $(addprefix $(OBJ_PATH), $(OBJ))
+INCS	= -I ./includes/
 
-OBJS		= $(SRCS:%.c=$(OBJS_DIR)/%.o)
+all: $(OBJ_PATH) $(NAME) 
 
-all : $(NAME)
+$(OBJ_PATH)%.o: $(SRC_PATH)%.c
+	$(CC) $(CFLAGS) -c $< -o $@ $(INCS)
 
-$(NAME): $(OBJS) $(LIB_DIR)/$(LIB_DIR).a
-			$(CC) $(CFLAGS) -o $@ $^
+$(OBJ_PATH):
+	mkdir $(OBJ_PATH)
 
-$(OBJS): $(OBJS_DIR)/%.o: $(SRCS_DIR)/%.c
-			$(CC) $(CFLAGS) -I$(INCLUDE) -I$(LIB_DIR)/include -c $< -o $@
-
-$(LIB_DIR)/$(LIB_DIR).a:
-			$(MAKE) -C $(LIB_DIR)
+$(NAME): $(OBJS)
+	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
 
 clean:
-	rm -rf $(OBJS_DIR)
-	$(MAKE) -C $(LIB_DIR) clean
+	rm -rf $(OBJ_PATH)
 
 fclean: clean
-	rm -rf $(NAME)
-	$(MAKE) -C $(LIB_DIR) fclean
+	rm -f $(NAME)
 
 re: fclean all
-
-.PHONY: all clean fclean re

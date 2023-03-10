@@ -1,17 +1,24 @@
-t_list  *create_list_a(t_list *list_a; char **tab)
+t_pile  *create_pile(char **tab)
 {
     int     i;
-
+	t_list	*list_a;
+	t_list	*list_b;
+	t_pile	*pile;
+	
     i = 1;
     while(tab[i])
     {
-    list_a = add_at(list_a,(ft_atoi[i]), 0);
-    i++;
+    	list_a = add_at(lst,(ft_atoi[i]), 0);
+    	i++;
     }
-    return (list_a);
+	list_b = empty_list();
+	pile = malloc(sizeof(t_pile));
+	pile->pile_a = list_a;
+	pile->pile_b = list_b;
+    return (pile);
 }
 
-t_list	add_at(t_list *lst, int content, int pos)
+static t_list	add_at(t_list *lst, int content, int pos)
 {
 	t_list	prec;
 	t_list	cur;
@@ -52,7 +59,28 @@ static t_list	*create_cell(int content)
 	return (cell);
 }
 
-t_list	*empty_list(void)
+static t_list	*empty_list(void)
 {
 	return(NULL);
+}
+
+void	*free_pile(t_pile *pile)
+{
+	t_list *tmp;
+
+	while(pile->pile_a)
+	{
+		tmp = pile_a->next;
+		free(pile->pile_a);
+		pile->pile_a = tmp;
+	}
+	while(pile->pile_b)
+	{
+		tmp = pile->pile_b->next;
+		free(pile->pile_b);
+		pile->pile_b = tmp;
+	}
+	free(pile->pile_a);
+	free(pile->pile_b);
+	free(pile);
 }

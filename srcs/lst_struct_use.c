@@ -42,17 +42,3 @@ int	ft_lstsize(t_list *lst)
 	}
 	return (i);
 }
-
-t_list	*free_list(t_list *lst)
-{
-	t_list *tmp;
-
-	tmp = NULL;
-	while(lst)
-	{
-		tmp = lst->next;
-		free(lst);
-		lst = tmp;
-	}
-	return (lst);
-}

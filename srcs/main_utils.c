@@ -23,24 +23,25 @@ int	ft_atoi(const char *str)
 	return (res * sign);
 }
 
-void    check_dup(t_list *lst)
+void    check_dup(t_pile *pile)
 {
     t_list     *tmp;
 
-    tmp->next = content;
-    while(*lst)
+    tmp = pile->pile_a->next;
+    while(pile->pile_a)
     {
-        while(*tmp)
+        while(tmp)
         {
-            if(lst == tmp)
+            if(pile->pile_a == tmp)
             {
+                free_pile(pile)
                 write(2, "ERROR\n", 6);
                 exit(EXIT_FAILURE);
             }
-            temp = temp->next;
+            tmp = tmp->next;
         }
-        lst = lst->next;
-        tmp = tmp->lst;
+        pile->pile_a = pile->pile_a->next;
+        tmp = pile->pile_a->next;
     }
 }
 
@@ -67,4 +68,11 @@ void    check_int(char **lst)
             i++;
         }
     }
+}
+
+void	exit_error(t_pile *pile)
+{
+	free_pile(pile);
+	write(2, "Error\n", 6);
+	exit (EXIT_FAILURE);
 }
