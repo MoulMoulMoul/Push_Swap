@@ -28,7 +28,7 @@ t_list  sorted_list(t_list *lst)
     return (lst);
 }
 
-t_list  sort_min_max(t_list *lst)
+void  sort_min_max(t_list *lst)
 {
     int     min;
     int     max;

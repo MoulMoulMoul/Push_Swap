@@ -14,9 +14,9 @@ void    sort_three(t_pile *pile)
     t_list  *two;
     t_list  *three;
 
-    one = pile->pile_a;
-    two = one->next;
-    three = two->next;
+    one = pile->pile_a->content;
+    two = pile->pile_a->next->content;
+    three = pile->pile_a->next->next->content;
     if (one < two && two < three) //123
         exit(EXIT_SUCCESS);
     if (one > two && two < three && one < three) //213
@@ -42,8 +42,16 @@ void    sort_three(t_pile *pile)
 void    sort_four(t_pile *pile)
 {
     t_list  *temp;
+    int     i;
 
-    while(lst)
+    i = 0;
+    while(pile)
+    {
+
+    }
+    sort_three(pile);
+    push_b(pile);
+    return ;
 }
 
 void    sort_five(t_pile *pile)
@@ -61,4 +69,4 @@ void    sort_five(t_pile *pile)
 1234
 1243
 1342
-3421
+2341

@@ -18,7 +18,7 @@ t_pile  *create_pile(char **tab)
     return (pile);
 }
 
-static t_list	add_at(t_list *lst, int content, int pos)
+t_list	add_at(t_list *lst, int content, int pos)
 {
 	t_list	prec;
 	t_list	cur;
@@ -83,4 +83,5 @@ void	*free_pile(t_pile *pile)
 	free(pile->pile_a);
 	free(pile->pile_b);
 	free(pile);
+	return ;
 }

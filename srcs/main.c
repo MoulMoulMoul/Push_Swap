@@ -32,7 +32,7 @@ int	main(int argc, char **argv)
 }
 
 
-void sort_small_stack(int len; t_pile *pile)
+void sort_small_stack(int len, t_pile *pile)
 {
     if (len == 2)
         exit(EXIT_SUCCESS);
@@ -47,7 +47,7 @@ void sort_small_stack(int len; t_pile *pile)
     return ;
 }
 
-void    sort_big_stack(t_pile pile)
+void    sort_big_stack(t_pile *pile)
 {
     ff
 }
