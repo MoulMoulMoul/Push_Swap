@@ -20,37 +20,41 @@ void    sort_three(t_pile *pile)
     if (one < two && two < three) //123
         exit(EXIT_SUCCESS);
     if (one > two && two < three && one < three) //213
-        swap_a(pile);
+        swap_sa(pile);
     if (one > two && one > three && two < three) //312
-        rotate_a(pile);
+        rotate_ra(pile);
     if (one < two && two > three && three < one) //231
-        reverse_rotate_a(pile);
+        reverse_rotate_rra(pile);
     if (one > two && two > three && one > three) //321
-    {
-        rotate_a(pile);
-        swap_a(pile);
-    }
+        three_two_one(pile);
     if (one < three && one < three && two > three) //132
-    {
-        push_a(pile);
-        swap_a(pile);
-        push_b(pile);
-    }
+        one_three_two(pile);
+    return ;
+}
+
+void    three_two_one(t_pile *pile)
+{
+    rotate_ra(pile);
+    swap_sa(pile);
+    return ;
+}
+
+void    one_three_two(t_pile *pile)
+{
+    push_pa(pile);
+    push_sa(pile);
+    push_pb(pile);
     return ;
 }
 
 void    sort_four(t_pile *pile)
 {
-    t_list  *temp;
     int     i;
 
     i = 0;
-    while(pile)
-    {
-
-    }
+    push_pa(pile);
     sort_three(pile);
-    push_b(pile);
+    if 
     return ;
 }
 

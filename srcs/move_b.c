@@ -6,7 +6,6 @@ void    swap_b(t_pile *pile)
     if(ft_lstsize(pile->pile_b) > 2)
     {
         move_at(pile->pile_b, pile->pile_b, 1);
-        write(1, "sa\n", 3);
     }
     return ;
 }
@@ -20,7 +19,6 @@ void    push_b(t_pile *pile)
     {
         move_at(pile->pile_b, pile->pile_a, 0);
         pile-pile_b = temp;
-        write(1, "pb\n", 3);
     }
     return ;
 }
@@ -33,7 +31,6 @@ void    rotate_b(t_pile *pile)
     move_at(pile->pile_b, pile->pile_b, ft_lstsize(pile->pile_b));
     pile->pile_b->next = NULL;
     pile->pile_b = temp;
-    write(1, "rb\n", 3);
     return ;
 }
 
@@ -53,6 +50,5 @@ void  reverse_rotate_b(t_pile *pile)
     move_at(pile->pile_b, temp, 0);
     last->next = NULL;
     pile->pile_b = temp;
-    write(1, "rrb\n", 4);
     return ;
 }
