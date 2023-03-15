@@ -42,3 +42,18 @@ int	ft_lstsize(t_list *lst)
 	}
 	return (i);
 }
+
+void	check_sort(t_pile *pile)
+{
+	t_pile	*prev;
+	t_pile	*cur;
+
+	cur = pile->pile_a;
+	while(prev < cur && cur)
+	{
+		prev = cur;
+		cur = prev->next;
+	}
+	if (cur == NULL)
+		exit(EXIT_SUCCESS);
+}

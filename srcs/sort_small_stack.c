@@ -32,29 +32,32 @@ void    sort_three(t_pile *pile)
     return ;
 }
 
-void    three_two_one(t_pile *pile)
-{
-    rotate_ra(pile);
-    swap_sa(pile);
-    return ;
-}
-
-void    one_three_two(t_pile *pile)
-{
-    push_pa(pile);
-    push_sa(pile);
-    push_pb(pile);
-    return ;
-}
-
 void    sort_four(t_pile *pile)
 {
-    int     i;
+    t_list  *prev;
+    t_list  *cur;
 
-    i = 0;
+    prev = pile->pile_a;
+    cur = pile->pile_a->next;
+    while(prev)
+    {
+        if (prev > cur)
+            continue
+        if
+    }
     push_pa(pile);
+    value = pile->pile_content;
     sort_three(pile);
-    if 
+    if (value < pile-pile_a->content) //234/1
+        push_pb(pile);
+    else if (value < pile->pile_a->next->content) //124/3
+    {
+    }
+    else if (value < pile->pile_a->next->next->content) //134/2
+        three_for_four(pile);
+    else if (value < pile->pile_a->next->next->next->content) //2/341
+    {
+    }
     return ;
 }
 

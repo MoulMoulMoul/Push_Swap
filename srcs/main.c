@@ -21,7 +21,7 @@ int	main(int argc, char **argv)
     check_int(argv);
     if (argc <= 2)
         return ;
-    pile = create_list(argv);
+    pile = create_pile(argv);
     check_dup(pile);
     checker = sorted_list(create_list(checker, argv));
     if (argc <= 6)

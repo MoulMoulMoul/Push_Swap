@@ -60,7 +60,7 @@ void    check_int(char **lst)
                 i++;
         while(lst[j][i])
         {
-            if (lst[j][i] < '0' || ls > '9')
+            if (lst[j][i] < '0' || lst > '9')
             {
                 write(2, "ERROR\n", 6);
                 exit(EXIT_FAILURE);
