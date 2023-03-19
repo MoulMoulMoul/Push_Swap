@@ -5,7 +5,8 @@ NAME	= push_swap
 SRC_PATH = src/
 OBJ_PATH = obj/
 
-SRC		= *.c\
+SRC		= %.c
+
 SRCS	= $(addprefix $(SRC_PATH), $(SRC))
 OBJ		= $(SRC:.c=.o)
 OBJS	= $(addprefix $(OBJ_PATH), $(OBJ))

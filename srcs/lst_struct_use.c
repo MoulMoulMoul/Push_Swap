@@ -57,3 +57,26 @@ void	check_sort(t_pile *pile)
 	if (cur == NULL)
 		exit(EXIT_SUCCESS);
 }
+
+void    place_pos(t_pile *pile; t_list *lst)
+{
+    int     i;
+    t_list  temp;
+    t_list  check;
+
+    i = 1;
+    temp = list->list_a;
+    check = lst;
+    while (temp)
+    {
+        if(temp->content = check->content)
+        {
+            temp->pos = i;
+            i++;
+            temp = temp->next;
+        }
+        check = check->next;
+        if(!check)
+            check = lst;
+    }
+}

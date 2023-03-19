@@ -24,13 +24,13 @@ int	main(int argc, char **argv)
     pile = create_pile(argv);
     check_dup(pile);
     checker = sorted_list(create_list(checker, argv));
+    place_pos(pile, checker);
     if (argc <= 6)
         sort_small_stack(argc, pile);
     else
         sort_big_stack(pile);
     free_pile(pile);
 }
-
 
 void sort_small_stack(int len, t_pile *pile)
 {
